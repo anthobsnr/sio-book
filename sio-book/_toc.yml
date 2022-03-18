@@ -1,0 +1,18 @@
+format: jb-book
+root: intro
+parts:
+  # cours1
+  - caption: cours 1
+    chapters:
+    - file: cours1/sujet1
+  # harmonisation_prog
+  - caption: cours 2
+    chapters: 
+    - file: cours2/intro
+      sections:
+      - file: cours2/tp/tp1
+      - file: cours2/tp/tp2
+    # - file: cours2/section
+    #   sections:
+    #   - file: cours2/tp/tp3
+    #   - file: cours2/tp/tp4     
