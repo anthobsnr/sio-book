@@ -19,10 +19,8 @@ source ./venv/bin/activate
 ```bash
 python3 -m pip install --upgrade pip
 ```
-5 - Ajouter une clé SSH
 
-
-### Building the book
+## Building the book
 
 If you'd like to develop and/or build the Book - BTS SIO - Lycée de la venise verte book, you should:
 
