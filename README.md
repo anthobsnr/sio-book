@@ -3,7 +3,7 @@
 Jupyter book, formation Git/Github/Jupyter BST SIO 
 
 ## Installation
-### Installation des packages 
+1 - Installation des packages 
 ```bash
 apt install python3 python3-dev build-essential libssl-dev libffi-dev
 ```
