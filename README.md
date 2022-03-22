@@ -2,9 +2,25 @@
 
 Jupyter book, formation Git/Github/Jupyter BST SIO 
 
-## Usage
+## Installation
+1 - Installation des packages 
+```bash
+apt install python3 python3-dev build-essential libssl-dev libffi-dev
+```
+2 - Créer un environnement virtuel Python
+```bash
+python3 -m venv venv
+```
+3 - Activer votre environnement Python
+```bash
+source ./venv/bin/activate
+```
+4 - Mettre à jour pip
+```bash
+python3 -m pip install --upgrade pip
+```
 
-### Building the book
+## Building the book
 
 If you'd like to develop and/or build the Book - BTS SIO - Lycée de la venise verte book, you should:
 
