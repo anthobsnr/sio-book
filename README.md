@@ -4,7 +4,9 @@ Jupyter book, formation Git/Github/Jupyter BST SIO
 
 ## Usage
 ### Installation des dépendances
-    apt install
+```bash
+apt install
+```
 
 ### Building the book
 
