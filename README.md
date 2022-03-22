@@ -7,19 +7,19 @@ Jupyter book, formation Git/Github/Jupyter BST SIO
 ```bash
 apt install python3 python3-dev build-essential libssl-dev libffi-dev
 ```
-### Créer un environnement virtuel Python
+2 - Créer un environnement virtuel Python
 ```bash
 python3 -m venv venv
 ```
-### Activer votre environnement Python
+3 - Activer votre environnement Python
 ```bash
 source ./venv/bin/activate
 ```
-### Mettre à jour pip
+4 - Mettre à jour pip
 ```bash
 python3 -m pip install --upgrade pip
 ```
-## Ajouter une clé SSH
+5 - Ajouter une clé SSH
 
 
 ### Building the book
