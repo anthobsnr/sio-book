@@ -3,10 +3,19 @@
 Jupyter book, formation Git/Github/Jupyter BST SIO 
 
 ## Usage
-### Installation des dépendances
+### Installation des packages 
 ```bash
-apt install
+apt install python3 python3-dev build-essential libssl-dev libffi-dev
 ```
+Créer un environnement virtuel Python
+    python3 -m venv venc
+
+Activer votre environnement Python
+    source ./venv/bin/activate
+
+Mettre à jour pip
+    python3 -m pip install --upgrade pip
+
 
 ### Building the book
 
