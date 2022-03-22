@@ -2,7 +2,7 @@
 
 Jupyter book, formation Git/Github/Jupyter BST SIO 
 
-## Usage
+## Installation
 ### Installation des packages 
 ```bash
 apt install python3 python3-dev build-essential libssl-dev libffi-dev
@@ -19,6 +19,8 @@ source ./venv/bin/activate
 ```bash
 python3 -m pip install --upgrade pip
 ```
+## Ajouter une clé SSH
+
 
 ### Building the book
 
