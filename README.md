@@ -9,7 +9,7 @@ apt install python3 python3-dev build-essential libssl-dev libffi-dev
 ```
 ### Créer un environnement virtuel Python
 ```bash
-python3 -m venv venc
+python3 -m venv venv
 ```
 ### Activer votre environnement Python
 ```bash
