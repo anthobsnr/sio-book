@@ -65,12 +65,11 @@ crontab -e
 1. Utilisez la commande crontab pour créer votre fichier crontab. Lors de la première exécution de crontab vous demandera de choisir un éditeur de texte, choisissez nano.
 2. Supprimez tous les commentaires
 3. Remplacez ceci (faites un copier/coller), enregistrez et quittez. 
+'''bash
 # Fichier crontab
-
-
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-
+'''
 
 # Exemple de planification de tache:
 # .---------------- Minute (0 - 59)
