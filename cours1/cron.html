@@ -378,19 +378,39 @@ const thebe_selector_output = ".output, .cell_output"
 <h3>Prérequis:<a class="headerlink" href="#prerequis" title="Permalink to this headline">¶</a></h3>
 <p>Nous allons nous assurer que votre machine soit correctement configurée pour récupérer l’heure et la date depuis un serveur ntp:</p>
 <ol class="simple">
-<li><p>Vérifiez que vous possédez les dernières versions de ntp, ntpq (ntp query) et ntpdate (mise à jour de l’horloge)
-apt-get update
-apt install ntp ntpq ntpdate</p></li>
-<li><p>Vérifiez l’état du service ntp
-service ntp status</p></li>
+<li><p>Vérifiez que vous possédez les dernières versions de ntp, ntpq (ntp query) et ntpdate (mise à jour de l’horloge)</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apt-get update
+apt install ntp ntpq ntpdate 
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Vérifiez l’état du service ntp</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>service ntp status
+</pre></div>
+</div>
+<ol class="simple">
 <li><p>Vérifiez l’état des serveurs ntp
-Les serveurs sont mentionnés dans votre fichier /etc/ntp.conf.
-ntpq -p</p></li>
-<li><p>Par défaut, votre système utilisera l’heure universelle (UTC). Lancez timedatectl.
-timedatectl
-La ligne Time zone: Etc/UTC (UTC, +0000)vous indique que l’heure système est basé sur l’heure universelle. Il faudra changer de fuseau horaire pour passer à l’heure française.</p></li>
-<li><p>Pour changer de fuseau horaire (Europe/Paris)
-timedatectl set-timezone Europe/Paris</p></li>
+Les serveurs sont mentionnés dans votre fichier /etc/ntp.conf.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ntpq -p
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Par défaut, votre système utilisera l’heure universelle (UTC). Lancez timedatectl.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>timedatectl
+</pre></div>
+</div>
+<p>La ligne Time zone: Etc/UTC (UTC, +0000)vous indique que l’heure système est basé sur l’heure universelle. Il faudra changer de fuseau horaire pour passer à l’heure française.</p>
+<ol class="simple">
+<li><p>Pour changer de fuseau horaire (Europe/Paris)</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>timedatectl set-timezone Europe/Paris
+</pre></div>
+</div>
+<ol class="simple">
 <li><p>Relancez timedatectl et vérifiez que fuseau horaire soit bien celui de Paris  Time zone: Europe/Paris (CET, +0100)</p></li>
 </ol>
 </div>
