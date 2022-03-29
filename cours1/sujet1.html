@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cours 1 - sujet 1 &#8212; Book - BTS SIO</title>
+    <title>ADMINISTRATION LINUX - sujet 1 &#8212; Book - BTS SIO</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Intro Cours 2" href="../cours2/intro.html" />
@@ -106,7 +108,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Cours 1 - sujet 1
+   ADMINISTRATION LINUX - sujet 1
   </a>
  </li>
 </ul>
@@ -220,6 +222,112 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   ADMINISTRATION LINUX - sujet 1
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#planification-de-tache">
+   PLANIFICATION DE TÂCHE
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#introduction">
+     Introduction
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#prerequis">
+       Prérequis:
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#utilisation-du-daemon-cron">
+       Utilisation du daemon cron
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#la-commande-crontab">
+       La commande crontab
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#travaux-pratiques-1">
+     Travaux pratiques 1
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fichier-crontab">
+   Fichier crontab
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exemple-de-planification-de-tache">
+   Exemple de planification de tache:
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#minute-0-59">
+   .—————- Minute (0 - 59)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#heure-0-23">
+   |  .————- Heure (0 - 23)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jour-du-mois-1-31">
+   |  |  .———- Jour du mois (1 - 31)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mois-1-12-or-jan-feb-mar-apr">
+   |  |  |  .——- Mois (1 - 12) OR jan,feb,mar,apr …
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jour-de-la-semaine-0-6-oubien-sun-mon-tue-wed">
+   |  |  |  |  .—- Jour de la semaine (0 - 6) oubien sun, mon, tue, wed …
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   |  |  |  |  |
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#commande">
+   *  *  *  *  * commande
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#crontab-de-lutilisateur-user1">
+   Crontab de l’utilisateur user1”
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nom-du-script-tp-cron1-sh">
+   Nom du script: tp_cron1.sh
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -227,20 +335,462 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Cours 1 - sujet 1</h1>
+                <h1>ADMINISTRATION LINUX - sujet 1</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   ADMINISTRATION LINUX - sujet 1
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#planification-de-tache">
+   PLANIFICATION DE TÂCHE
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#introduction">
+     Introduction
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#prerequis">
+       Prérequis:
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#utilisation-du-daemon-cron">
+       Utilisation du daemon cron
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#la-commande-crontab">
+       La commande crontab
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#travaux-pratiques-1">
+     Travaux pratiques 1
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fichier-crontab">
+   Fichier crontab
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exemple-de-planification-de-tache">
+   Exemple de planification de tache:
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#minute-0-59">
+   .—————- Minute (0 - 59)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#heure-0-23">
+   |  .————- Heure (0 - 23)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jour-du-mois-1-31">
+   |  |  .———- Jour du mois (1 - 31)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mois-1-12-or-jan-feb-mar-apr">
+   |  |  |  .——- Mois (1 - 12) OR jan,feb,mar,apr …
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jour-de-la-semaine-0-6-oubien-sun-mon-tue-wed">
+   |  |  |  |  .—- Jour de la semaine (0 - 6) oubien sun, mon, tue, wed …
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   |  |  |  |  |
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#commande">
+   *  *  *  *  * commande
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#crontab-de-lutilisateur-user1">
+   Crontab de l’utilisateur user1”
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nom-du-script-tp-cron1-sh">
+   Nom du script: tp_cron1.sh
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="cours-1-sujet-1">
-<h1>Cours 1 - sujet 1<a class="headerlink" href="#cours-1-sujet-1" title="Permalink to this headline">¶</a></h1>
-<p>Intro Cours 1.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="administration-linux-sujet-1">
+<h1>ADMINISTRATION LINUX - sujet 1<a class="headerlink" href="#administration-linux-sujet-1" title="Permalink to this headline">¶</a></h1>
+<p>ADMINISTRATION LINUX</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="planification-de-tache">
+<h1>PLANIFICATION DE TÂCHE<a class="headerlink" href="#planification-de-tache" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>CRON est un daemon qui permet d’automatiser l’exécution de programmes ou de scripts de manière récurrente (tous les jours par exemple) ou à une date prédéfinie (par exemple le 1 avril à 10h00).</p>
+<div class="section" id="prerequis">
+<h3>Prérequis:<a class="headerlink" href="#prerequis" title="Permalink to this headline">¶</a></h3>
+<p>Nous allons nous assurer que votre machine soit correctement configurée pour récupérer l’heure et la date depuis un serveur ntp:</p>
+<ol class="simple">
+<li><p>Vérifiez que vous possédez les dernières versions de ntp, ntpq (ntp query) et ntpdate (mise à jour de l’horloge)
+apt-get update
+apt install ntp ntpq ntpdate</p></li>
+<li><p>Vérifiez l’état du service ntp
+service ntp status</p></li>
+<li><p>Vérifiez l’état des serveurs ntp
+Les serveurs sont mentionnés dans votre fichier /etc/ntp.conf.
+ntpq -p</p></li>
+<li><p>Par défaut, votre système utilisera l’heure universelle (UTC). Lancez timedatectl.
+timedatectl
+La ligne Time zone: Etc/UTC (UTC, +0000)vous indique que l’heure système est basé sur l’heure universelle. Il faudra changer de fuseau horaire pour passer à l’heure française.</p></li>
+<li><p>Pour changer de fuseau horaire (Europe/Paris)
+timedatectl set-timezone Europe/Paris</p></li>
+<li><p>Relancez timedatectl et vérifiez que fuseau horaire soit bien celui de Paris  Time zone: Europe/Paris (CET, +0100)</p></li>
+</ol>
+</div>
+<div class="section" id="utilisation-du-daemon-cron">
+<h3>Utilisation du daemon cron<a class="headerlink" href="#utilisation-du-daemon-cron" title="Permalink to this headline">¶</a></h3>
+<p>Fonctionnement
+Les tâches planifiées sont définies à partir de fichiers crontab. Chaque utilisateur à la possibilité de planifier une tâche avec la commande crontab, qui créera un crontab dédié à cet l’utilisateur.  Ces fichiers crontab sont stockés dans le répertoire  /var/spool/cron/crontabs/<utilisateur> pour tous les utilisateurs  (root inclus). Notez qu’il existe un /etc/crontab qui est exclusivement réservé pour les tâches système du daemon cron; donc, nous ne l’utiliserons pas.</p>
+</div>
+<div class="section" id="la-commande-crontab">
+<h3>La commande crontab<a class="headerlink" href="#la-commande-crontab" title="Permalink to this headline">¶</a></h3>
+<p>crontab est la commande qui va nous permettre d’ajouter, supprimer ou lister les entrées des tables utilisées par le démon cron.</p>
+<p>Liste non exhaustives des options de crontab
+crontab -e<br />
+Édite le fichier crontab de l’utilisateur /var/spool/cron/crontab/<user>. Il sera créé s’il n’existe pas.
+crontab -l
+Affiche le fichier /var/spool/cron/crontab/<votre utilisateur>.
+crontab -r
+Supprime le fichier  /var/spool/cron/crontab/<votre utilisateur>
+crontab -u <utilisateur><br />
+Change d’utilisateur pour le fichier crontab. Il faudra ajouter l’option que vous désirez à la suite.  Cette option nécessite des privilèges root.
+Pour la liste complète faite man crontab</p>
+</div>
+</div>
+<div class="section" id="travaux-pratiques-1">
+<h2>Travaux pratiques 1<a class="headerlink" href="#travaux-pratiques-1" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Utilisez la commande crontab pour créer votre fichier crontab. Lors de la première exécution de crontab vous demandera de choisir un éditeur de texte, choisissez nano.</p></li>
+<li><p>Supprimez tous les commentaires</p></li>
+<li><p>Remplacez ceci (faites un copier/coller), enregistrez et quittez.</p></li>
+</ol>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="fichier-crontab">
+<h1>Fichier crontab<a class="headerlink" href="#fichier-crontab" title="Permalink to this headline">¶</a></h1>
+<p>SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="exemple-de-planification-de-tache">
+<h1>Exemple de planification de tache:<a class="headerlink" href="#exemple-de-planification-de-tache" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="minute-0-59">
+<h1>.—————- Minute (0 - 59)<a class="headerlink" href="#minute-0-59" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="heure-0-23">
+<h1>|  .————- Heure (0 - 23)<a class="headerlink" href="#heure-0-23" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="jour-du-mois-1-31">
+<h1>|  |  .———- Jour du mois (1 - 31)<a class="headerlink" href="#jour-du-mois-1-31" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="mois-1-12-or-jan-feb-mar-apr">
+<h1>|  |  |  .——- Mois (1 - 12) OR jan,feb,mar,apr …<a class="headerlink" href="#mois-1-12-or-jan-feb-mar-apr" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="jour-de-la-semaine-0-6-oubien-sun-mon-tue-wed">
+<h1>|  |  |  |  .—- Jour de la semaine (0 - 6) oubien sun, mon, tue, wed …<a class="headerlink" href="#jour-de-la-semaine-0-6-oubien-sun-mon-tue-wed" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>|  |  |  |  |<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="commande">
+<h1>*  *  *  *  * commande<a class="headerlink" href="#commande" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p>Créez un nouvel utilisateur “user1”</p></li>
+<li><p>Loguez vous avec cet utilisateur “user1”</p></li>
+<li><p>Utilisez “crontab -e” pour éditer le fichier crontab de l’utilisateur “user1”</p></li>
+<li><p>Supprimez tous les commentaires</p></li>
+<li><p>Ajoutez la ligne</p></li>
+</ol>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="crontab-de-lutilisateur-user1">
+<h1>Crontab de l’utilisateur user1”<a class="headerlink" href="#crontab-de-lutilisateur-user1" title="Permalink to this headline">¶</a></h1>
+<p>et enregistrez vos modifications
+9. Reconnectez-vous avec root
+10. Rendez-vous dans le répertoire /var/spool/cron/crontab
+11. Quels fichiers sont présents ?
+12. Quels sont leurs contenus ?
+Les variables CRON
+$PATH : La variable PATH définit le chemin par défaut où se trouve les commandes que vous souhaitez exécuter. Si la commande que vous exécutez n’est pas présente dans le PATH, votre tâche ne sera pas exécutée. Pour régler cela vous pouvez soit :</p>
+<ul class="simple">
+<li><p>utiliser le chemin absolu de la commande</p></li>
+<li><p>modifier la variable cron PATH.</p></li>
+</ul>
+<p>$SHELL: Définit le shell que cron devra utiliser pour exécuter vos tâches. Il en existe plusieurs (sh, bash ,ksh, etc …). Nous n’utilisons pas de shell spécifique pour ce TP. Lancez les valeurs par défaut.</p>
+<p><span class="math notranslate nohighlight">\(HOME: La variable \)</span>HOME peut être définie dans crontab si vous avez besoin de mentionner un répertoire de travail spécifique. Nous n’utilisons pas cette variable dans ce TP.</p>
+<p>$MAILTO : permet la notification par <a class="reference external" href="http://e-mail.Il">e-mail.Il</a> est possible de mentionner liste de destinataire en séparant par des virgules les adresses. Dans ce TP MAILTO sera défini vide (MAILTO = “”), aucun mail ne sera envoyé.</p>
+<p>Les tâches planifiées
+Pour afficher la liste des tache faite crontab -l.</p>
+<p>Chaque ligne représente une tâche et procèdent 6 paramètres séparés d’un espace:</p>
+<ol class="simple">
+<li><p>Les minutes</p></li>
+<li><p>Les heures</p></li>
+<li><p>Le jour</p></li>
+<li><p>Le mois</p></li>
+<li><p>Le jour de la semaine</p></li>
+<li><p>La commande a exécuter</p></li>
+</ol>
+<p>Voici un exemple où root exécute le script <a class="reference external" href="http://full-backup.sh">full-backup.sh</a> à 23:30 le 15 mai :
+30 23 15 05* /root/scripts/full-backup.sh
+30 – la 30ème minute
+23– de la 23ème heure
+15– du 15ème jour
+05– du 5ème mois (soit mai)</p>
+<ul class="simple">
+<li><p>– n’importe quel jour de la semaine</p></li>
+</ul>
+<p>Les  différents paramètres:
+Position
+Paramètres
+Valeurs possibles
+1er champs
+Les minutes
+0-59
+2ème champs
+Les heures
+0-23
+3ème champs
+Le jour du mois
+0-31
+4ème champs
+Le mois
+1-12 ou
+jan, fev, mar, apr, may, jun, etc…
+5ème champs
+Le jour de la semaine
+0-6 où 0=dimanche
+sun, mon, tue, wed, thu, fri, sat
+6ème champs
+Commande
+Vous devez  respecter la syntaxe du SHELL définit dans la variable $SHELL. Pour nous ce sera sh. Sont autorisés les pipelines et redirections.</p>
+<p>Travaux pratiques 2</p>
+<p>Pour chaque champs (unité de temps), minute, heure, jour, mois et jour de la semaine, on peut utiliser :</p>
+<ol class="simple">
+<li><p>Une valeur afin définir une date et/ou une horaire
+Exemple1
+30 23 15 05 * /root/scripts/full-backup.sh
+30 → la 30ème minute
+23 → de la 23ème heure
+15 → du 15ème jour
+05 → du 5ème mois (soit mai)</p></li>
+</ol>
+<ul class="simple">
+<li><p>→ peu importe le  jour de la semaine</p></li>
+</ul>
+<p>Soit à 23h30 le 15 mai</p>
+<p>Travaux pratiques: Faite la même chose pour mais pour le 10 septembre à 8h30</p>
+<p>Exemple 2
+30 23 * * mon /root/scripts/full-backup.sh
+30 → la 30ème minute
+23 → de la 23ème heure</p>
+<ul class="simple">
+<li><p>→ tous les jours</p></li>
+<li><p>→ tous les mois
+mon → le lundi</p></li>
+</ul>
+<p>Soit à 23h30 tous les lundis, puisque l’on a définit quelques que soit les jours et le mois</p>
+<p>Travaux pratiques: Faite la même chose mais pour les mardis</p>
+<ol class="simple">
+<li><p>Un astérix (*) indique toutes les unités de temps. C’est à dire toutes les minutes si un astérix est positionné dans le champs minutes, toutes les heures si un * est positionné dans le champ heure, etc…</p></li>
+</ol>
+<p>Exemple 3
+0 8 * * * /root/scripts/launch.sh
+0 → la 30ème minute
+8→ de la 23ème heure</p>
+<ul class="simple">
+<li><p>→ tous les jours</p></li>
+<li><p>→ tous les mois</p></li>
+<li><p>→ peu importe le  jour de la semaine</p></li>
+</ul>
+<p>Soit à 8h00 tous les jours</p>
+<p>Travaux pratiques: Faite la même chose mais à 18h15</p>
+<ol class="simple">
+<li><p>La virgule permet de définir plusieurs valeurs distinctes. Par exemple: 14,18 positionné dans le champ heure exécutera la commande à 14 et 18 heures.</p></li>
+</ol>
+<p>Exemple 4
+0 14,18 * * * /root/scripts/launch.sh
+0 → la 0ème minute, soit à pile
+14,18 → de la 14ème et la 18ème heure</p>
+<ul class="simple">
+<li><p>→ tous les jours</p></li>
+<li><p>→ tous les mois</p></li>
+<li><p>→ peu importe le  jour de la semaine</p></li>
+</ul>
+<p>Soit à 14h et 18h tous les jours</p>
+<p>Travaux pratiques: Faite la même chose mais à 14h les lundi et mardi
+4. Le tiret du 6 (-) pour définir une plage d’unité de temps. Par exemple 1-5 est équivalent à 1,2,3,4,5. La commande sera exécutée à chaque unité de temps inclus dans la plage concernée.</p>
+<p>Exemple 5
+0 23 * * * /root/scripts/check.sh
+0 → la 30ème minute
+23 → de la 23ème heure</p>
+<ul class="simple">
+<li><p>→ tous les jours
+1-6  → tous les mois de janvier à juin</p></li>
+<li><p>→ peu importe le  jour de la semaine</p></li>
+</ul>
+<p>Soit à 23h tous les jours du mois de janvier au mois de juin</p>
+<p>Travaux pratiques: Faite la même chose du mois de juillet à décembre</p>
+<ol class="simple">
+<li><p>/ la barre oblique permet de définir une intervalle d’unité de temps. Par exemple */15 positionné sur le champs minutes, exécutera la commande toute les 15 minutes. */6 positionné sur les mois exécutera la commande tous les 6 mois.</p></li>
+</ol>
+<p>Exemple 6
+*/15 * * * * /root/scripts/check_mail.sh
+*/15 → prend toutes les valeurs avec une intervalle de 15 minutes</p>
+<ul class="simple">
+<li><p>→ toutes les heures</p></li>
+<li><p>→ tous les jours</p></li>
+<li><p>→ tous les mois</p></li>
+<li><p>→ peu importe le  jour de la semaine</p></li>
+</ul>
+<p>Soit toutes les 15 minutes</p>
+<p>Travaux pratiques: Faite la même chose toutes les 10 jours à 8h00</p>
+<p>Notez qu’il existe des raccourcis:</p>
+<ul class="simple">
+<li><p>&#64;reboot                 Lancement une fois au démarrage.</p></li>
+<li><p>&#64;yearly                 Lancement une fois par an (remplace: 0 0 1 1 *)</p></li>
+<li><p>&#64;monthly                 Lancement une fois par mois (remplace: 0 0 1 * *)</p></li>
+<li><p>&#64;weekly                 Lancement une fois par semaine (remplace: 0 0 * * 0)</p></li>
+<li><p>&#64;daily                 Lancement une fois par jour (remplace: 0 0 * * *)</p></li>
+<li><p>&#64;hourly                 Lancement une fois par heure (remplace: 0 * * * *)</p></li>
+</ul>
+<p>Exemple 7
+0 8,17 * */3 mon,fri /root/scripts/check_mail.sh
+0 → la 0ème minute
+8,17 → La 8ème et 17ème heure</p>
+<ul class="simple">
+<li><p>→ Peut importe le jour
+*/3 → tous les 3 mois
+mon,fri → Uniquement les lundi et vendredi</p></li>
+</ul>
+<p>Soit à 8h et 17h tous les 3 mois uniquement les lundis et vendredi</p>
+<p>Exercices
+Créer le script tp_cron1.sh
+nano tp_cron1.sh</p>
+<p>Ce script affiche la date et l’heure comme ceci: “13/02/21 09:44:27”
+#!/bin/bash</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="id2">
+<h1><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="nom-du-script-tp-cron1-sh">
+<h1>Nom du script: tp_cron1.sh<a class="headerlink" href="#nom-du-script-tp-cron1-sh" title="Permalink to this headline">¶</a></h1>
+<p>date “+%d/%m/%y %H:%M:%S”</p>
+<p>Pensez à ajouter les droits en exécution à votre script.
+chmod +x tp_cron1.sh</p>
+<ol class="simple">
+<li><p>Ajoutez une tache qui exécutera le script <a class="reference external" href="http://tp-cron.sh">tp-cron.sh</a> toutes les minutes</p></li>
+<li><p>Ajoutez tâche qui exécutera le script <a class="reference external" href="http://tp-cron.sh">tp-cron.sh</a> à 10, 25 et 45 minutes</p></li>
+<li><p>Ajoutez tâche qui exécutera le script <a class="reference external" href="http://tp-cron.sh">tp-cron.sh</a> à 10h15 tous les jours</p></li>
+<li><p>Ajoutez une tache qui exécutera le script <a class="reference external" href="http://tp-cron.sh">tp-cron.sh</a> tous les jours de 8 à 17h heure.</p></li>
+<li><p>Ajoutez une tache qui exécutera le script <a class="reference external" href="http://tp-cron.sh">tp-cron.sh</a> toute la journée 1 heure sur 2</p></li>
+<li><p>Sans utiliser le raccourci &#64;monthly lancez  le script <a class="reference external" href="http://tp-cron.sh">tp-cron.sh</a> une fois par mois</p></li>
+<li><p>Lancez le script <a class="reference external" href="http://tp-cron.sh">tp-cron.sh</a> tous les 3 jours.</p></li>
+<li><p>Ajouter une tâche qui exécute apt-get update tous les lundi</p></li>
+<li><p>Exécutez le script <a class="reference external" href="http://tp-cron.sh">tp-cron.sh</a> une fois par trimestre.</p></li>
+<li><p>Envoyez un message aux utilisateurs avec  la commande wall “Message URGENT: C’est bientôt la pause” tous les jeudis à 12h30 de septembre à juin.</p></li>
+<li><p>Planifiez une (pseudo) sauvegarde à partir du script <a class="reference external" href="http://sauvegarde.sh">sauvegarde.sh</a> tous les jours sauf les samedis et dimanches à 22h00.</p></li>
+<li><p>une (pseudo) sauvegarde à partir du script <a class="reference external" href="http://sauvegarde.sh">sauvegarde.sh</a> tous les lundi les mois de septembre, octobre, novembre, décembre, janvier, février et mars</p></li>
+</ol>
+<p>Les logs système et CRON
+Logger les erreurs des tâches</p>
+<p>Rappels sur les redirections</p>
+<blockquote>
+<div><p>fichier.log
+Redirige la sortie standard et la concatène avec le contenu du fichier fichier.log</p>
+<blockquote>
+<div><p>fichier.log
+Redirige la sortie standard et écrase le fichier fichier.log
+2&gt; fichier.log
+Redirige la sortie des erreurs vers le fichier fichier.log</p>
+</div></blockquote>
+</div></blockquote>
+<p>Exemple</p>
+<ul>
+<li><ul class="simple">
+<li><ul>
+<li><ul>
+<li><ul>
+<li><p>/home/user/myscript.sh &gt;/home/user/myscript.log 2&gt;&amp;1</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><blockquote>
+<div><p>/home/user/myscript.log indique à cron de rediriger la sortie standard (STDOUT) vers le fichier /home/user/myscript.log . STDOUT sera ajouté au fichier (sans l’écraser).</p>
+</div></blockquote>
+</li>
+<li><p>2&gt; &amp; 1 indique à cron d’envoyer les erreurs (STDERR) vers  la même cible que la sortie normale (STDOUT)</p></li>
+</ul>
+<ol class="simple">
+<li><p>Reprenez votre tache de l’exercice 12 et redirigez la sortie standard vers le fichier /var/log/mon_cron.log</p></li>
+<li><p>Reprenez votre tache de l’exercice 12 et redirigez la sortie erreur vers le fichier /var/log/erreurs_cron.log</p></li>
+</ol>
+<p>Log système
+Le daemon CRON laisse des traces dans le log système /var/log/syslog :
+cat /var/log/syslog
+Sans surprise, ce log est très chargé.</p>
+<p>Pour filtrer les logs de CRON uniquement
+grep CRON /var/log/syslog
+Gérer les permissions d’exécution de CRON
+Par défaut les distributions Debian (et dérivés) autorisent tous les utilisateurs à planifier une tâche avec CRON. Si besoin, il est possible de filtrer les utilisateurs ayant le droit d’accéder au daemon CRON.</p>
+<ul class="simple">
+<li><p>Si le fichier /etc/cron.allow existe, vous devez y figurer (un utilisateur par ligne) pour être autorisé à utiliser crontab.</p></li>
+<li><p>Si le fichier /etc/cron.allow n’existe pas mais que /etc/cron.deny existe, vous ne devez pas y être répertorié. Faute de quoi, votre utilisateur ne sera plus autorisé à utiliser crontab.</p></li>
+<li><p>Si les 2 fichiers /etc/cron.allow et /etc/cron.deny existent, le fichier /etc/cron.allow sera prioritaire et /etc/cron.deny ignoré.</p></li>
+<li><p>Si aucun de ces fichiers ne sont présent, par défaut Debian autorise tous les utilisateurs à utiliser crontab.</p></li>
+</ul>
+<ol class="simple">
+<li><p>A l’aide du fichiers cron.allow, autorisez uniquement root à planifier une tâche</p></li>
+<li><p>Créer un second utilisateur “user2”. Loguez-vous avec l’utilisateur user2. Essayez de planifier une tâche. Quel résultat obtenez-vous ?</p></li>
+<li><p>Reconnectez-vous avec root. Ajoutez “user2” comme utilisateur autorisé à planifier une tâche. Loguez-vous avec l’utilisateur user2. Essayez de planifier une tâche. Quel résultat obtenez-vous ?</p></li>
+</ol>
 </div>
 
     <script type="text/x-thebe-config">
