@@ -1,3 +1,4 @@
+
 ADMINISTRATION LINUX - sujet 1
 =================
 
@@ -43,6 +44,8 @@ timedatectl set-timezone Europe/Paris
 ```
 
 7. Relancez timedatectl et vérifiez que fuseau horaire soit bien celui de Paris  Time zone: Europe/Paris (CET, +0100) 
+
+
 ## Utilisation du daemon cron
 Fonctionnement
 Les tâches planifiées sont définies à partir de fichiers crontab. Chaque utilisateur à la possibilité de planifier une tâche avec la commande crontab, qui créera un crontab dédié à cet l'utilisateur.  Ces fichiers crontab sont stockés dans le répertoire  /var/spool/cron/crontabs/<utilisateur> pour tous les utilisateurs  (root inclus). Notez qu’il existe un /etc/crontab qui est exclusivement réservé pour les tâches système du daemon cron; donc, nous ne l'utiliserons pas.
@@ -53,15 +56,15 @@ crontab est la commande qui va nous permettre d’ajouter, supprimer ou lister l
 
 
 Liste non exhaustives des options de crontab
-crontab -e        
-	Édite le fichier crontab de l’utilisateur /var/spool/cron/crontab/<user>. Il sera créé s’il n’existe pas.
-	crontab -l
-	Affiche le fichier /var/spool/cron/crontab/<votre utilisateur>.
-	crontab -r
-	Supprime le fichier  /var/spool/cron/crontab/<votre utilisateur>
-	crontab -u <utilisateur>        
-	Change d’utilisateur pour le fichier crontab. Il faudra ajouter l’option que vous désirez à la suite.  Cette option nécessite des privilèges root.
-	Pour la liste complète faite man crontab
+| Commande | Description|
+|--|--|
+| crontab -e  | Édite le fichier crontab de l’utilisateur /var/spool/cron/crontab/<user>. Il sera créé s’il n’existe pas. |
+|-crontab -l | Affiche le fichier /var/spool/cron/crontab/<votre utilisateur>. |
+| crontab -r | Supprime le fichier  /var/spool/cron/crontab/<votre utilisateur> |
+| crontab -u <utilisateur> | Permute d’utilisateur pour le fichier crontab. Il faudra ajouter l’option que vous désirez à la suite.  Cette option nécessite des privilèges root.
+ |
+        
+> Pour la liste complète faite `man crontab`
 
 
 ## Travaux pratiques 1
