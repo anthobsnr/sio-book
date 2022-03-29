@@ -2,9 +2,9 @@ format: jb-book
 root: intro
 parts:
   # cours1
-  - caption: cours 1
+  - caption: Cours 1
     chapters:
-    - file: cours1/sujet1
+    - file: cours1/cron
   # harmonisation_prog
   - caption: cours 2
     chapters: 
