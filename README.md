@@ -1,6 +1,6 @@
 # Book - BTS SIO - Lycée de la venise verte
 
-Jupyter book, formation Git/Github/Jupyter BST SIO 
+Jupyter book, formation Git/Github/Jupyter BST SIO: https://ornech.github.io/sio-book/
 
 ## Installation
 1 - Installation des packages 
