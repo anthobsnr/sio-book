@@ -1,7 +1,6 @@
 ADMINISTRATION LINUX - sujet 1
 =================
 
-ADMINISTRATION LINUX
 # PLANIFICATION DE TÂCHE
 
 ## Introduction
@@ -40,7 +39,7 @@ timedatectl set-timezone Europe/Paris
 
 
 
-### Utilisation du daemon cron
+## Utilisation du daemon cron
 Fonctionnement
 Les tâches planifiées sont définies à partir de fichiers crontab. Chaque utilisateur à la possibilité de planifier une tâche avec la commande crontab, qui créera un crontab dédié à cet l'utilisateur.  Ces fichiers crontab sont stockés dans le répertoire  /var/spool/cron/crontabs/<utilisateur> pour tous les utilisateurs  (root inclus). Notez qu’il existe un /etc/crontab qui est exclusivement réservé pour les tâches système du daemon cron; donc, nous ne l'utiliserons pas.
 
@@ -65,11 +64,10 @@ crontab -e
 1. Utilisez la commande crontab pour créer votre fichier crontab. Lors de la première exécution de crontab vous demandera de choisir un éditeur de texte, choisissez nano.
 2. Supprimez tous les commentaires
 3. Remplacez ceci (faites un copier/coller), enregistrez et quittez. 
-'''bash
-# Fichier crontab
+```bash
+\# Fichier crontab
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-'''
 
 # Exemple de planification de tache:
 # .---------------- Minute (0 - 59)
@@ -79,18 +77,22 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 # |  |  |  |  .---- Jour de la semaine (0 - 6) oubien sun, mon, tue, wed ... 
 # |  |  |  |  |
 # *  *  *  *  * commande
+```
 4. Créez un nouvel utilisateur “user1”
 5. Loguez vous avec cet utilisateur “user1”
-6. Utilisez “crontab -e” pour éditer le fichier crontab de l’utilisateur “user1”
+6. Utilisez `crontab -e` pour éditer le fichier crontab de l’utilisateur “user1”
 7. Supprimez tous les commentaires 
-8. Ajoutez la ligne 
+8. Ajoutez la ligne:
+```
 # Crontab de l’utilisateur user1” 
+```
 et enregistrez vos modifications
 9. Reconnectez-vous avec root
 10. Rendez-vous dans le répertoire /var/spool/cron/crontab
 11. Quels fichiers sont présents ?
 12. Quels sont leurs contenus ?
-Les variables CRON
+
+### Les variables CRON
 $PATH : La variable PATH définit le chemin par défaut où se trouve les commandes que vous souhaitez exécuter. Si la commande que vous exécutez n'est pas présente dans le PATH, votre tâche ne sera pas exécutée. Pour régler cela vous pouvez soit :
 * utiliser le chemin absolu de la commande
 * modifier la variable cron PATH.
@@ -104,10 +106,8 @@ $HOME: La variable $HOME peut être définie dans crontab si vous avez besoin de
 
 $MAILTO : permet la notification par e-mail.Il est possible de mentionner liste de destinataire en séparant par des virgules les adresses. Dans ce TP MAILTO sera défini vide (MAILTO = ""), aucun mail ne sera envoyé.
 
-
-
-
-Les tâches planifiées
+	
+### Les tâches planifiées
 Pour afficher la liste des tache faite crontab -l.
 
 
@@ -127,7 +127,6 @@ Voici un exemple où root exécute le script full-backup.sh à 23:30 le 15 mai :
 15– du 15ème jour
 05– du 5ème mois (soit mai)
 * – n’importe quel jour de la semaine
-
 
 Les  différents paramètres:
 Position
