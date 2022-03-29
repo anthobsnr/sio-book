@@ -12,33 +12,37 @@ Nous allons nous assurer que votre machine soit correctement configurée pour r�
 
 
 1. Vérifiez que vous possédez les dernières versions de ntp, ntpq (ntp query) et ntpdate (mise à jour de l’horloge)
+```bash
 apt-get update
 apt install ntp ntpq ntpdate 
+```
+
 
 
 2. Vérifiez l’état du service ntp
+```bash
 service ntp status
-
+```
 
 3. Vérifiez l’état des serveurs ntp
      Les serveurs sont mentionnés dans votre fichier /etc/ntp.conf.
+```bash
 ntpq -p
-
+```
 
 4. Par défaut, votre système utilisera l’heure universelle (UTC). Lancez timedatectl.
+```bash
 timedatectl
+```
 La ligne Time zone: Etc/UTC (UTC, +0000)vous indique que l’heure système est basé sur l’heure universelle. Il faudra changer de fuseau horaire pour passer à l’heure française. 
 
 
 5. Pour changer de fuseau horaire (Europe/Paris)
+```bash
 timedatectl set-timezone Europe/Paris
+```
 
-
-6. Relancez timedatectl et vérifiez que fuseau horaire soit bien celui de Paris  Time zone: Europe/Paris (CET, +0100) 
-
-
-
-
+7. Relancez timedatectl et vérifiez que fuseau horaire soit bien celui de Paris  Time zone: Europe/Paris (CET, +0100) 
 ## Utilisation du daemon cron
 Fonctionnement
 Les tâches planifiées sont définies à partir de fichiers crontab. Chaque utilisateur à la possibilité de planifier une tâche avec la commande crontab, qui créera un crontab dédié à cet l'utilisateur.  Ces fichiers crontab sont stockés dans le répertoire  /var/spool/cron/crontabs/<utilisateur> pour tous les utilisateurs  (root inclus). Notez qu’il existe un /etc/crontab qui est exclusivement réservé pour les tâches système du daemon cron; donc, nous ne l'utiliserons pas.
