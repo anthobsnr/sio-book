@@ -422,16 +422,34 @@ Les tâches planifiées sont définies à partir de fichiers crontab. Chaque uti
 <div class="section" id="la-commande-crontab">
 <h3>La commande crontab<a class="headerlink" href="#la-commande-crontab" title="Permalink to this headline">¶</a></h3>
 <p>crontab est la commande qui va nous permettre d’ajouter, supprimer ou lister les entrées des tables utilisées par le démon cron.</p>
-<p>Liste non exhaustives des options de crontab
-crontab -e<br />
-Édite le fichier crontab de l’utilisateur /var/spool/cron/crontab/<user>. Il sera créé s’il n’existe pas.
-crontab -l
-Affiche le fichier /var/spool/cron/crontab/<votre utilisateur>.
-crontab -r
-Supprime le fichier  /var/spool/cron/crontab/<votre utilisateur>
-crontab -u <utilisateur><br />
-Change d’utilisateur pour le fichier crontab. Il faudra ajouter l’option que vous désirez à la suite.  Cette option nécessite des privilèges root.
-Pour la liste complète faite man crontab</p>
+<p>Liste non exhaustives des options de crontab</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Commande</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>crontab -e</p></td>
+<td><p>Édite le fichier crontab de l’utilisateur /var/spool/cron/crontab/<user>. Il sera créé s’il n’existe pas.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-crontab -l</p></td>
+<td><p>Affiche le fichier /var/spool/cron/crontab/<votre utilisateur>.</p></td>
+</tr>
+<tr class="row-even"><td><p>crontab -r</p></td>
+<td><p>Supprime le fichier  /var/spool/cron/crontab/<votre utilisateur></p></td>
+</tr>
+<tr class="row-odd"><td><p>crontab -u <utilisateur></p></td>
+<td><p>Permute d’utilisateur pour le fichier crontab. Il faudra ajouter l’option que vous désirez à la suite.  Cette option nécessite des privilèges root.</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><p>Pour la liste complète faite <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">crontab</span></code></p>
+</div></blockquote>
 </div>
 </div>
 <div class="section" id="travaux-pratiques-1">
