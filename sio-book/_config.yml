@@ -5,8 +5,8 @@
 
 #######################################################################################
 # Book settings
-title                       : Book - BTS SIO - Lycée de la venise verte  # The title of the book. Will be placed in the left navbar.
-author                      : BTS SIO - Lycée de la venise verte   # The author of the book
+title                       : Book - BTS SIO # The title of the book. Will be placed in the left navbar.
+author                      : Jean-François Ornech - Lycée de la venise verte   # The author of the book
 copyright                   : "2022"  # Copyright year to be placed in the footer
 logo                        : logo.png  # A path to the book logo
 
