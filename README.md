@@ -1,4 +1,4 @@
-# Book - BTS SIO - Lycée de la venise verte
+# Book - BTS SIO
 
 Jupyter book, formation Git/Github/Jupyter BST SIO: https://ornech.github.io/sio-book/
 
