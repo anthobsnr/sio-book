@@ -288,6 +288,30 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#nom-du-script-tp-cron1-sh">
    Nom du script: tp_cron1.sh
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#les-logs-cron">
+     Les logs CRON
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#logger-les-erreurs">
+       Logger les erreurs
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#log-systeme">
+     Log système
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gerer-les-permissions-dexecution-de-cron">
+     Gérer les permissions d’exécution de CRON
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -370,6 +394,30 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#nom-du-script-tp-cron1-sh">
    Nom du script: tp_cron1.sh
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#les-logs-cron">
+     Les logs CRON
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#logger-les-erreurs">
+       Logger les erreurs
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#log-systeme">
+     Log système
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gerer-les-permissions-dexecution-de-cron">
+     Gérer les permissions d’exécution de CRON
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -395,7 +443,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Vérifiez que vous possédez les dernières versions de ntp, ntpq (ntp query) et ntpdate (mise à jour de l’horloge)</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apt-get update
-apt install ntp ntpq ntpdate 
+apt install ntp ntpq ntpdate
 </pre></div>
 </div>
 <ol class="simple">
@@ -476,13 +524,12 @@ Les tâches planifiées sont définies à partir de fichiers crontab. Chaque uti
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="se">\#</span> Fichier crontab
 <span class="nv">SHELL</span><span class="o">=</span>/bin/sh
 <span class="nv">PATH</span><span class="o">=</span>/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-
 <span class="c1"># Exemple de planification de tache:</span>
 <span class="c1"># .---------------- Minute (0 - 59)</span>
 <span class="c1"># |  .------------- Heure (0 - 23)</span>
 <span class="c1"># |  |  .---------- Jour du mois (1 - 31)</span>
 <span class="c1"># |  |  |  .------- Mois (1 - 12) OR jan,feb,mar,apr ...</span>
-<span class="c1"># |  |  |  |  .---- Jour de la semaine (0 - 6) oubien sun, mon, tue, wed ... </span>
+<span class="c1"># |  |  |  |  .---- Jour de la semaine (0 - 6) oubien sun, mon, tue, wed ...</span>
 <span class="c1"># |  |  |  |  |</span>
 <span class="c1"># *  *  *  *  * commande</span>
 </pre></div>
@@ -494,7 +541,7 @@ Les tâches planifiées sont définies à partir de fichiers crontab. Chaque uti
 <li><p>Supprimez tous les commentaires</p></li>
 <li><p>Ajoutez la ligne:</p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crontab de l’utilisateur user1” </span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crontab de l’utilisateur user1”</span>
 </pre></div>
 </div>
 <p>et enregistrez vos modifications
@@ -509,9 +556,9 @@ Les tâches planifiées sont définies à partir de fichiers crontab. Chaque uti
 <li><p>utiliser le chemin absolu de la commande</p></li>
 <li><p>modifier la variable cron PATH.</p></li>
 </ul>
-<p>$SHELL: Définit le shell que cron devra utiliser pour exécuter vos tâches. Il en existe plusieurs (sh, bash ,ksh, etc …). Nous n’utilisons pas de shell spécifique pour ce TP. Lancez les valeurs par défaut.</p>
-<p><span class="math notranslate nohighlight">\(HOME: La variable \)</span>HOME peut être définie dans crontab si vous avez besoin de mentionner un répertoire de travail spécifique. Nous n’utilisons pas cette variable dans ce TP.</p>
-<p>$MAILTO : permet la notification par <a class="reference external" href="http://e-mail.Il">e-mail.Il</a> est possible de mentionner liste de destinataire en séparant par des virgules les adresses. Dans ce TP MAILTO sera défini vide (MAILTO = “”), aucun mail ne sera envoyé.</p>
+<p><strong>$SHELL</strong>: Définit le shell que cron devra utiliser pour exécuter vos tâches. Il en existe plusieurs (sh, bash ,ksh, etc …). Nous n’utilisons pas de shell spécifique pour ce TP. Lancez les valeurs par défaut.</p>
+<p>**<span class="math notranslate nohighlight">\(HOME**: La variable \)</span>HOME peut être définie dans crontab si vous avez besoin de mentionner un répertoire de travail spécifique. Nous n’utilisons pas cette variable dans ce TP.</p>
+<p><strong>$MAILTO</strong> : permet la notification par <a class="reference external" href="http://e-mail.Il">e-mail.Il</a> est possible de mentionner liste de destinataire en séparant par des virgules les adresses. Dans ce TP MAILTO sera défini vide (MAILTO = “”), aucun mail ne sera envoyé.</p>
 </div>
 <div class="section" id="les-taches-planifiees">
 <h3>Les tâches planifiées<a class="headerlink" href="#les-taches-planifiees" title="Permalink to this headline">¶</a></h3>
@@ -526,12 +573,12 @@ Les tâches planifiées sont définies à partir de fichiers crontab. Chaque uti
 <li><p>La commande a exécuter</p></li>
 </ol>
 <p>Voici un exemple où root exécute le script <a class="reference external" href="http://full-backup.sh">full-backup.sh</a> à 23:30 le 15 mai :
-30 23 15 05* /root/scripts/full-backup.sh
-30 – la 30ème minute
-23– de la 23ème heure
-15– du 15ème jour
-05– du 5ème mois (soit mai)</p>
+30 23 15 05* /root/scripts/full-backup.sh</p>
 <ul class="simple">
+<li><p>30 – la 30ème minute</p></li>
+<li><p>23– de la 23ème heure</p></li>
+<li><p>15– du 15ème jour</p></li>
+<li><p>05– du 5ème mois (soit mai)</p></li>
 <li><p>– n’importe quel jour de la semaine</p></li>
 </ul>
 <p>Les  différents paramètres:
@@ -688,52 +735,48 @@ chmod +x tp_cron1.sh</p>
 <li><p>Planifiez une (pseudo) sauvegarde à partir du script <a class="reference external" href="http://sauvegarde.sh">sauvegarde.sh</a> tous les jours sauf les samedis et dimanches à 22h00.</p></li>
 <li><p>une (pseudo) sauvegarde à partir du script <a class="reference external" href="http://sauvegarde.sh">sauvegarde.sh</a> tous les lundi les mois de septembre, octobre, novembre, décembre, janvier, février et mars</p></li>
 </ol>
-<p>Les logs système et CRON
-Logger les erreurs des tâches</p>
-<p>Rappels sur les redirections</p>
+<div class="section" id="les-logs-cron">
+<h2>Les logs CRON<a class="headerlink" href="#les-logs-cron" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="logger-les-erreurs">
+<h3>Logger les erreurs<a class="headerlink" href="#logger-les-erreurs" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><p>fichier.log
-Redirige la sortie standard et la concatène avec le contenu du fichier fichier.log</p>
-<blockquote>
-<div><p>fichier.log
+<div><p><strong>Rappels sur les redirections</strong>
+Redirige la sortie standard et la concatène avec le contenu du fichier fichier.log
+&gt;&gt; fichier.log
 Redirige la sortie standard et écrase le fichier fichier.log
 2&gt; fichier.log
 Redirige la sortie des erreurs vers le fichier fichier.log</p>
 </div></blockquote>
+<p><strong>Exemple</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>* * * * * /home/user/myscript.sh &gt;/home/user/myscript.log <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">...</span> <span class="pre">\&gt;</span> <span class="pre">/home/user/myscript.log</span></code> indique à cron de rediriger la sortie standard (STDOUT) vers le fichier /home/user/myscript.log .</p>
+<p>Notez que STDOUT sera ajouté e fin de fichier. <code class="docutils literal notranslate"><span class="pre">myscript.log</span></code> ne sera pas écrasé.</p>
+<p><code class="docutils literal notranslate"><span class="pre">2&gt;&amp;1</span></code> indique à cron d’envoyer les erreurs (STDERR) vers  la même cible que la sortie normale (STDOUT)</p>
 </div></blockquote>
-<p>Exemple</p>
-<ul>
-<li><ul class="simple">
-<li><ul>
-<li><ul>
-<li><ul>
-<li><p>/home/user/myscript.sh &gt;/home/user/myscript.log 2&gt;&amp;1</p></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><blockquote>
-<div><p>/home/user/myscript.log indique à cron de rediriger la sortie standard (STDOUT) vers le fichier /home/user/myscript.log . STDOUT sera ajouté au fichier (sans l’écraser).</p>
-</div></blockquote>
-</li>
-<li><p>2&gt; &amp; 1 indique à cron d’envoyer les erreurs (STDERR) vers  la même cible que la sortie normale (STDOUT)</p></li>
-</ul>
 <ol class="simple">
-<li><p>Reprenez votre tache de l’exercice 12 et redirigez la sortie standard vers le fichier /var/log/mon_cron.log</p></li>
-<li><p>Reprenez votre tache de l’exercice 12 et redirigez la sortie erreur vers le fichier /var/log/erreurs_cron.log</p></li>
+<li><p>Reprenez votre tache de l’exercice 12 et redirigez la sortie standard vers le fichier <code class="docutils literal notranslate"><span class="pre">/var/log/mon_cron.log</span></code></p></li>
+<li><p>Reprenez votre tache de l’exercice 12 et redirigez la sortie erreur vers le fichier <code class="docutils literal notranslate"><span class="pre">/var/log/erreurs_cron.log</span></code></p></li>
 </ol>
-<p>Log système
-Le daemon CRON laisse des traces dans le log système /var/log/syslog :
-cat /var/log/syslog
-Sans surprise, ce log est très chargé.</p>
-<p>Pour filtrer les logs de CRON uniquement
-grep CRON /var/log/syslog
-Gérer les permissions d’exécution de CRON
-Par défaut les distributions Debian (et dérivés) autorisent tous les utilisateurs à planifier une tâche avec CRON. Si besoin, il est possible de filtrer les utilisateurs ayant le droit d’accéder au daemon CRON.</p>
+</div>
+</div>
+<div class="section" id="log-systeme">
+<h2>Log système<a class="headerlink" href="#log-systeme" title="Permalink to this headline">¶</a></h2>
+<p>Le daemon CRON laisse des traces dans le log système /var/log/syslog :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat /var/log/syslog
+</pre></div>
+</div>
+<p>Sans surprise, ce log est très chargé.</p>
+<p>Si vous souhaitez filtrer ce fichier de logs et afficher uniquement les lignes impliquant CRON, faite:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grep CRON /var/log/syslog
+</pre></div>
+</div>
+</div>
+<div class="section" id="gerer-les-permissions-dexecution-de-cron">
+<h2>Gérer les permissions d’exécution de CRON<a class="headerlink" href="#gerer-les-permissions-dexecution-de-cron" title="Permalink to this headline">¶</a></h2>
+<p>Par défaut les distributions Debian (et dérivés) autorisent tous les utilisateurs à planifier une tâche avec CRON. Si besoin, il est possible de filtrer les utilisateurs ayant le droit d’accéder au daemon CRON.</p>
 <ul class="simple">
 <li><p>Si le fichier /etc/cron.allow existe, vous devez y figurer (un utilisateur par ligne) pour être autorisé à utiliser crontab.</p></li>
 <li><p>Si le fichier /etc/cron.allow n’existe pas mais que /etc/cron.deny existe, vous ne devez pas y être répertorié. Faute de quoi, votre utilisateur ne sera plus autorisé à utiliser crontab.</p></li>
@@ -743,8 +786,11 @@ Par défaut les distributions Debian (et dérivés) autorisent tous les utilisat
 <ol class="simple">
 <li><p>A l’aide du fichiers cron.allow, autorisez uniquement root à planifier une tâche</p></li>
 <li><p>Créer un second utilisateur “user2”. Loguez-vous avec l’utilisateur user2. Essayez de planifier une tâche. Quel résultat obtenez-vous ?</p></li>
-<li><p>Reconnectez-vous avec root. Ajoutez “user2” comme utilisateur autorisé à planifier une tâche. Loguez-vous avec l’utilisateur user2. Essayez de planifier une tâche. Quel résultat obtenez-vous ?</p></li>
+<li><p>Reconnectez-vous avec root. Ajoutez “user2” comme utilisateur autorisé à planifier une tâche.</p></li>
+<li><p>Loguez-vous avec l’utilisateur user2.</p></li>
+<li><p>Essayez de planifier une tâche. Quel résultat obtenez-vous ?</p></li>
 </ol>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
