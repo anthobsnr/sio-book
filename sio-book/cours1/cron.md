@@ -15,7 +15,7 @@ Nous allons nous assurer que votre machine soit correctement configurée pour r�
 1. Vérifiez que vous possédez les dernières versions de ntp, ntpq (ntp query) et ntpdate (mise à jour de l’horloge)
 ```bash
 apt-get update
-apt install ntp ntpq ntpdate 
+apt install ntp ntpq ntpdate
 ```
 
 
@@ -35,7 +35,7 @@ ntpq -p
 ```bash
 timedatectl
 ```
-La ligne Time zone: Etc/UTC (UTC, +0000)vous indique que l’heure système est basé sur l’heure universelle. Il faudra changer de fuseau horaire pour passer à l’heure française. 
+La ligne Time zone: Etc/UTC (UTC, +0000)vous indique que l’heure système est basé sur l’heure universelle. Il faudra changer de fuseau horaire pour passer à l’heure française.
 
 
 5. Pour changer de fuseau horaire (Europe/Paris)
@@ -43,7 +43,7 @@ La ligne Time zone: Etc/UTC (UTC, +0000)vous indique que l’heure système est 
 timedatectl set-timezone Europe/Paris
 ```
 
-7. Relancez timedatectl et vérifiez que fuseau horaire soit bien celui de Paris  Time zone: Europe/Paris (CET, +0100) 
+7. Relancez timedatectl et vérifiez que fuseau horaire soit bien celui de Paris  Time zone: Europe/Paris (CET, +0100)
 
 
 ## Utilisation du daemon cron
@@ -63,35 +63,34 @@ Liste non exhaustives des options de crontab
 | crontab -r | Supprime le fichier  /var/spool/cron/crontab/<votre utilisateur> |
 | crontab -u <utilisateur> | Permute d’utilisateur pour le fichier crontab. Il faudra ajouter l’option que vous désirez à la suite.  Cette option nécessite des privilèges root.
  |
-        
+
 > Pour la liste complète faite `man crontab`
 
 
 ## Travaux pratiques 1
 1. Utilisez la commande crontab pour créer votre fichier crontab. Lors de la première exécution de crontab vous demandera de choisir un éditeur de texte, choisissez nano.
 2. Supprimez tous les commentaires
-3. Remplacez ceci (faites un copier/coller), enregistrez et quittez. 
+3. Remplacez ceci (faites un copier/coller), enregistrez et quittez.
 ```bash
 \# Fichier crontab
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-
 # Exemple de planification de tache:
 # .---------------- Minute (0 - 59)
 # |  .------------- Heure (0 - 23)
 # |  |  .---------- Jour du mois (1 - 31)
 # |  |  |  .------- Mois (1 - 12) OR jan,feb,mar,apr ...
-# |  |  |  |  .---- Jour de la semaine (0 - 6) oubien sun, mon, tue, wed ... 
+# |  |  |  |  .---- Jour de la semaine (0 - 6) oubien sun, mon, tue, wed ...
 # |  |  |  |  |
 # *  *  *  *  * commande
 ```
 4. Créez un nouvel utilisateur “user1”
 5. Loguez vous avec cet utilisateur “user1”
 6. Utilisez `crontab -e` pour éditer le fichier crontab de l’utilisateur “user1”
-7. Supprimez tous les commentaires 
+7. Supprimez tous les commentaires
 8. Ajoutez la ligne:
 ```
-# Crontab de l’utilisateur user1” 
+# Crontab de l’utilisateur user1”
 ```
 et enregistrez vos modifications
 9. Reconnectez-vous avec root
@@ -105,15 +104,15 @@ $PATH : La variable PATH définit le chemin par défaut où se trouve les comman
 * modifier la variable cron PATH.
 
 
-$SHELL: Définit le shell que cron devra utiliser pour exécuter vos tâches. Il en existe plusieurs (sh, bash ,ksh, etc ...). Nous n'utilisons pas de shell spécifique pour ce TP. Lancez les valeurs par défaut.
+**$SHELL**: Définit le shell que cron devra utiliser pour exécuter vos tâches. Il en existe plusieurs (sh, bash ,ksh, etc ...). Nous n'utilisons pas de shell spécifique pour ce TP. Lancez les valeurs par défaut.
 
 
-$HOME: La variable $HOME peut être définie dans crontab si vous avez besoin de mentionner un répertoire de travail spécifique. Nous n'utilisons pas cette variable dans ce TP.
+**$HOME**: La variable $HOME peut être définie dans crontab si vous avez besoin de mentionner un répertoire de travail spécifique. Nous n'utilisons pas cette variable dans ce TP.
 
 
-$MAILTO : permet la notification par e-mail.Il est possible de mentionner liste de destinataire en séparant par des virgules les adresses. Dans ce TP MAILTO sera défini vide (MAILTO = ""), aucun mail ne sera envoyé.
+**$MAILTO** : permet la notification par e-mail.Il est possible de mentionner liste de destinataire en séparant par des virgules les adresses. Dans ce TP MAILTO sera défini vide (MAILTO = ""), aucun mail ne sera envoyé.
 
-	
+
 ### Les tâches planifiées
 Pour afficher la liste des tache faite crontab -l.
 
@@ -129,10 +128,10 @@ Chaque ligne représente une tâche et procèdent 6 paramètres séparés d’un
 
 Voici un exemple où root exécute le script full-backup.sh à 23:30 le 15 mai :
 30 23 15 05* /root/scripts/full-backup.sh
-30 – la 30ème minute
-23– de la 23ème heure
-15– du 15ème jour
-05– du 5ème mois (soit mai)
+* 30 – la 30ème minute
+* 23– de la 23ème heure
+* 15– du 15ème jour
+* 05– du 5ème mois (soit mai)
 * – n’importe quel jour de la semaine
 
 Les  différents paramètres:
@@ -159,7 +158,7 @@ sun, mon, tue, wed, thu, fri, sat
 	6ème champs
 	Commande
 	Vous devez  respecter la syntaxe du SHELL définit dans la variable $SHELL. Pour nous ce sera sh. Sont autorisés les pipelines et redirections.
-	
+
 
 Travaux pratiques 2
 
@@ -181,12 +180,6 @@ Soit à 23h30 le 15 mai
 
 
 Travaux pratiques: Faite la même chose pour mais pour le 10 septembre à 8h30
-
-
-
-
-
-
 
 
 Exemple 2
@@ -268,7 +261,7 @@ Exemple 6
 * → peu importe le  jour de la semaine
 
 
-Soit toutes les 15 minutes 
+Soit toutes les 15 minutes
 
 
 Travaux pratiques: Faite la même chose toutes les 10 jours à 8h00
@@ -296,12 +289,12 @@ Exemple 7
 mon,fri → Uniquement les lundi et vendredi
 
 
-Soit à 8h et 17h tous les 3 mois uniquement les lundis et vendredi 
+Soit à 8h et 17h tous les 3 mois uniquement les lundis et vendredi
 
 
 Exercices
-Créer le script tp_cron1.sh 
-nano tp_cron1.sh 
+Créer le script tp_cron1.sh
+nano tp_cron1.sh
 
 
 Ce script affiche la date et l’heure comme ceci: “13/02/21 09:44:27”
@@ -359,14 +352,14 @@ Logger les erreurs des tâches
 
 Rappels sur les redirections
 > fichier.log
-	Redirige la sortie standard et la concatène avec le contenu du fichier fichier.log 
+	Redirige la sortie standard et la concatène avec le contenu du fichier fichier.log
 	>> fichier.log
-	Redirige la sortie standard et écrase le fichier fichier.log 
+	Redirige la sortie standard et écrase le fichier fichier.log
 	2> fichier.log
 	Redirige la sortie des erreurs vers le fichier fichier.log
-	
 
-Exemple 
+
+Exemple
 * * * * * /home/user/myscript.sh >/home/user/myscript.log 2>&1
 
 
@@ -382,10 +375,12 @@ Exemple
 
 
 
-Log système
+## Log système
 Le daemon CRON laisse des traces dans le log système /var/log/syslog :
+```bash
 cat /var/log/syslog
-Sans surprise, ce log est très chargé. 
+```
+Sans surprise, ce log est très chargé.
 
 
  Pour filtrer les logs de CRON uniquement
@@ -394,7 +389,7 @@ Gérer les permissions d’exécution de CRON
 Par défaut les distributions Debian (et dérivés) autorisent tous les utilisateurs à planifier une tâche avec CRON. Si besoin, il est possible de filtrer les utilisateurs ayant le droit d'accéder au daemon CRON.
 
 
-* Si le fichier /etc/cron.allow existe, vous devez y figurer (un utilisateur par ligne) pour être autorisé à utiliser crontab. 
+* Si le fichier /etc/cron.allow existe, vous devez y figurer (un utilisateur par ligne) pour être autorisé à utiliser crontab.
 * Si le fichier /etc/cron.allow n’existe pas mais que /etc/cron.deny existe, vous ne devez pas y être répertorié. Faute de quoi, votre utilisateur ne sera plus autorisé à utiliser crontab.
 * Si les 2 fichiers /etc/cron.allow et /etc/cron.deny existent, le fichier /etc/cron.allow sera prioritaire et /etc/cron.deny ignoré.
 * Si aucun de ces fichiers ne sont présent, par défaut Debian autorise tous les utilisateurs à utiliser crontab.
