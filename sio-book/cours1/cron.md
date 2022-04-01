@@ -346,33 +346,32 @@ chmod +x tp_cron1.sh
 12.  une (pseudo) sauvegarde à partir du script sauvegarde.sh tous les lundi les mois de septembre, octobre, novembre, décembre, janvier, février et mars
 
 
-Les logs système et CRON
-Logger les erreurs des tâches
+## Les logs CRON
+
+### Logger les erreurs
 
 
-Rappels sur les redirections
-> fichier.log
-	Redirige la sortie standard et la concatène avec le contenu du fichier fichier.log
-	>> fichier.log
+> **Rappels sur les redirections**
+>	Redirige la sortie standard et la concatène avec le contenu du fichier fichier.log
+>	\>\> fichier.log
 	Redirige la sortie standard et écrase le fichier fichier.log
 	2> fichier.log
 	Redirige la sortie des erreurs vers le fichier fichier.log
 
 
-Exemple
+**Exemple**
+```bash
 * * * * * /home/user/myscript.sh >/home/user/myscript.log 2>&1
+```
+> `... \> /home/user/myscript.log` indique à cron de rediriger la sortie standard (STDOUT) vers le fichier /home/user/myscript.log .
+>
+> Notez que STDOUT sera ajouté e fin de fichier. `myscript.log` ne sera pas écrasé.
+>
+> `2>&1` indique à cron d'envoyer les erreurs (STDERR) vers  la même cible que la sortie normale (STDOUT)
 
+13. Reprenez votre tache de l'exercice 12 et redirigez la sortie standard vers le fichier `/var/log/mon_cron.log`
 
-* > /home/user/myscript.log indique à cron de rediriger la sortie standard (STDOUT) vers le fichier /home/user/myscript.log . STDOUT sera ajouté au fichier (sans l’écraser).
-* 2> & 1 indique à cron d'envoyer les erreurs (STDERR) vers  la même cible que la sortie normale (STDOUT)
-
-
-13. Reprenez votre tache de l'exercice 12 et redirigez la sortie standard vers le fichier /var/log/mon_cron.log
-
-
-14. Reprenez votre tache de l'exercice 12 et redirigez la sortie erreur vers le fichier /var/log/erreurs_cron.log
-
-
+14. Reprenez votre tache de l'exercice 12 et redirigez la sortie erreur vers le fichier `/var/log/erreurs_cron.log`
 
 
 ## Log système
@@ -383,9 +382,12 @@ cat /var/log/syslog
 Sans surprise, ce log est très chargé.
 
 
- Pour filtrer les logs de CRON uniquement
+Si vous souhaitez filtrer ce fichier de logs et afficher uniquement les lignes impliquant CRON, faite:
+```bash
 grep CRON /var/log/syslog
-Gérer les permissions d’exécution de CRON
+```
+
+## Gérer les permissions d’exécution de CRON
 Par défaut les distributions Debian (et dérivés) autorisent tous les utilisateurs à planifier une tâche avec CRON. Si besoin, il est possible de filtrer les utilisateurs ayant le droit d'accéder au daemon CRON.
 
 
@@ -401,4 +403,8 @@ Par défaut les distributions Debian (et dérivés) autorisent tous les utilisat
 16. Créer un second utilisateur “user2”. Loguez-vous avec l’utilisateur user2. Essayez de planifier une tâche. Quel résultat obtenez-vous ?
 
 
-17. Reconnectez-vous avec root. Ajoutez “user2” comme utilisateur autorisé à planifier une tâche. Loguez-vous avec l’utilisateur user2. Essayez de planifier une tâche. Quel résultat obtenez-vous ?
+17. Reconnectez-vous avec root. Ajoutez “user2” comme utilisateur autorisé à planifier une tâche.
+
+18. Loguez-vous avec l’utilisateur user2.
+
+19. Essayez de planifier une tâche. Quel résultat obtenez-vous ?
